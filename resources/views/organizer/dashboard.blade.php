@@ -1,18 +1,17 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Organizer Dashboard') }}
+        </h2>
+    </x-slot>
 
-@section('title', 'Organizer Dashboard')
-
-@section('content')
-    <h2 class="text-center mb-4">Organizer Dashboard</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <a href="{{ route('voters.index') }}" class="btn btn-primary w-100 mb-2">Manage Voters</a>
-        </div>
-        <div class="col-md-4">
-            <a href="{{ route('candidates.index') }}" class="btn btn-primary w-100 mb-2">Manage Candidates</a>
-        </div>
-        <div class="col-md-4">
-            <a href="{{ route('positions.index') }}" class="btn btn-primary w-100 mb-2">Manage Positions</a>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    {{ __("Welcome, Organizer!") }}
+                </div>
+            </div>
         </div>
     </div>
-@endsection
+</x-app-layout>

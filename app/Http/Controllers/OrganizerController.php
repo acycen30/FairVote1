@@ -8,6 +8,6 @@ class OrganizerController extends Controller
 {
     public function index()
     {
-        return view('organizer.dashboard');
+        return view('organizer');
     }
 }

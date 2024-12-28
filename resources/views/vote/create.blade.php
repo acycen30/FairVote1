@@ -9,6 +9,9 @@
             @if(session('error'))
                 <div class="alert alert-danger">{{ session('error') }}</div>
             @endif
+            @if(session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
             <form method="POST" action="{{ route('vote.store') }}">
                 @csrf
                 <div class="mb-3">
@@ -16,7 +19,7 @@
                     <select id="candidate_id" name="candidate_id" class="form-select" required>
                         <option value="">-- Select Candidate --</option>
                         @foreach($candidates as $candidate)
-                            <option value="{{ $candidate->candidate_id }}">{{ $candidate->candidate_name }} ({{ $candidate->party_affiliation }})</option>
+                            <option value="{{ $candidate->id }}">{{ $candidate->name }} ({{ $candidate->party_affiliation }})</option>
                         @endforeach
                     </select>
                     @error('candidate_id')
